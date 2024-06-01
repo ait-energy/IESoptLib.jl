@@ -1,7 +1,9 @@
 module IESoptLib
 
-const _PATH_LIB = normpath(dirname(@__FILE__))
 export get_path, get_filename
+
+const _PATH_LIB = normpath(dirname(@__FILE__))
+const _PATH_ASSETS = normpath(_PATH_LIB, "..", "assets")
 
 """
     get_path()
@@ -21,11 +23,11 @@ get_path(:examples)
 """
 function get_path(asset_type::Symbol)::String
     if asset_type == :examples
-        return abspath(_PATH_LIB, "examples")
+        return abspath(_PATH_ASSETS, "examples")
     elseif asset_type == :addons
-        return abspath(_PATH_LIB, "addons")
+        return abspath(_PATH_ASSETS, "addons")
     elseif asset_type == :templates
-        return abspath(_PATH_LIB, "templates")
+        return abspath(_PATH_ASSETS, "templates")
     end
 
     throw(ArgumentError("Invalid asset type: $asset_type"))
