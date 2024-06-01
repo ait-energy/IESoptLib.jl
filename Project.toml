@@ -1,6 +1,5 @@
 name = "IESoptLibrary"
 uuid = "b98f706d-40ec-4ce6-a66c-1c6e71d3cef6"
-authors = ["Stefan Strömer <stefan.stroemer@gmail.com> and contributors"]
 version = "0.1.0"
 
 [compat]
