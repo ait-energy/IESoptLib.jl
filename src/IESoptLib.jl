@@ -1,4 +1,4 @@
-module IESoptLibrary
+module IESoptLib
 
 # Write your package code here.
 
