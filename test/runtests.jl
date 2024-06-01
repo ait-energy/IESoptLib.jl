@@ -25,8 +25,8 @@ import JET
         n = "01_basic_single_node"
         @test get_filename(:example, n) == joinpath(get_path(:examples), "$(n).iesopt.yaml")
         n = "CHP"
+        @test get_filename(:addon, n) == joinpath(get_path(:addons), "$(n).jl")
         @test get_filename(:template, n) == joinpath(get_path(:templates), "$(n).iesopt.template.yaml")
-        # TODO: test addons
 
         @test_throws ArgumentError get_filename(:other, n)
     end
