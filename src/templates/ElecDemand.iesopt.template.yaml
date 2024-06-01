@@ -1,0 +1,22 @@
+# Basic electricity demand.
+#
+# Parameters:
+#   - node: `Node` to draw electricity from.
+#   - value: Per snapshot value of the demand.
+#   - allow_deviation: "down" to allow for load shedding, "off" to disable (default = down).
+#   - cost_of_deviation: Value of lost load (default = 10000).
+
+parameters:
+  node: null
+  value: null
+  # allow_deviation: down     todo: allow this using a Profile that can be disabled
+  # cost_of_deviation: 10000
+
+component:
+  type: Profile
+  carrier: electricity
+  node_from: <node>
+  mode: fixed
+  value: <value>
+  # allow_deviation: <allow_deviation>
+  # cost_deviation: <cost_of_deviation>

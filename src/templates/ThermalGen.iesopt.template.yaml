@@ -1,0 +1,34 @@
+# Basic thermal generator component, based on a Unit.
+#
+# Parameters:
+#   - todo: document all parameters
+
+parameters:
+  fuel_in: null
+  fuel_carrier: null
+  elec_out: null
+  co2_out: null
+  capacity: null
+  efficiency: null
+  emission_factor: null
+  availability_factor: 1.0
+  marginal_cost: 0
+  unit_commitment: off
+  startup_cost: null
+  partial_load: null
+  partial_load_efficiency: null
+  count: 1
+
+component:
+  type: Unit
+  inputs: {<fuel_carrier>: <fuel_in>}
+  outputs: {electricity: <elec_out>, co2: <co2_out>}
+  conversion: 1 <fuel_carrier> -> <efficiency> electricity + <emission_factor> co2
+  capacity: <capacity> electricity
+  availability_factor: <availability_factor>
+  marginal_cost: <marginal_cost>
+  unit_commitment: <unit_commitment>
+  startup_cost: <startup_cost>
+  min_conversion: <partial_load>
+  conversion_at_min: 1 <fuel_carrier> -> <partial_load_efficiency> electricity + <emission_factor> co2
+  unit_count: <count>
