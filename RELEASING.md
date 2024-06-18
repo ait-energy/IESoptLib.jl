@@ -1,10 +1,11 @@
 # Releasing a new version
 
 1. Add your content
-2. Update the version in [Project.toml](./Project.toml)
-3. Commit this using `chore: prep for vX.Y.Z`
-4. Push (and create a MR/PR)
-5. After everything is in `main`, comment on the commit in GitHub to trigger the registrator (see below)
+2. Make sure tests pass locally (`]` to enter package mode, then `test`)
+3. Update the version in [Project.toml](./Project.toml)
+4. Commit this using `chore: prep for vX.Y.Z`
+5. Push (and create a MR/PR)
+6. After everything is in `main`, comment on the commit in GitHub to trigger the registrator (see below)
 
 ```text
 @JuliaRegistrator register
