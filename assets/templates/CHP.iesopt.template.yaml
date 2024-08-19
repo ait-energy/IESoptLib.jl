@@ -36,11 +36,7 @@ components:
     outputs: {electricity: <power_out>, co2: <co2_out>}
     conversion: 1 <fuel> -> <efficiency> electricity + <fuel_co2_emission_factor> co2
     capacity: <p_max> out:electricity
-    addon: chp_addon
-    config:
-      cm: <power_ratio>
-      cv: <power_loss_ratio>
-      linked: <self>.heat
+    build_priority: 1 # this component will be built before the heat component with default priority 0
 
   heat:
     type: Unit
